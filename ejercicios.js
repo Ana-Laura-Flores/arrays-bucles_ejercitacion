@@ -105,12 +105,13 @@ console.log(gano(['⭐️', '⭐️', '⭐️', '💫', '✨'])) // false
 
 //estanJuntos(personajes)
 //Crear una función estanJuntos que tome como argumento un array de strings personajes, y devuelva true si Sam se encuentra al lado de Frodo, ya sea antes o después, o false sino. Ejemplo:
-
+/*
 const estanJuntos=(personajes)=>{
     for (const personaje of personajes){
        
     }
 }
+*/
 /*
 const estanJuntos=(personajes)=>{
     const personaje = "Frodo"
@@ -121,9 +122,30 @@ const estanJuntos=(personajes)=>{
 }
 */
 
-console.log(estanJuntos(['Sam', 'Frodo', 'Legolas']))
-console.log(estanJuntos(['Peter', 'Frodo', 'Legolas'])) //true
+//console.log(estanJuntos(['Sam', 'Frodo', 'Legolas']))
+//console.log(estanJuntos(['Peter', 'Frodo', 'Legolas'])) //true
 //estanJuntos(['Aragorn', 'Frodo', 'Frodo']) //true
 //estanJuntos(['Sam', 'Orco', 'Frodo']) //true
 
 
+//EJERCICIO 6
+//separar(perrosYGatos)
+// una función separar que tome como argumento un string con emojis de perros y gatos y devuelva un string con los perros agrupados por un lado y los gatos por otro. Ejemplo:
+
+const separar =(string)=>{
+    let nuevoString = ""
+    for (const perroString of string ){
+       if(perroString === "🐶") {
+           nuevoString += "🐶"
+       }
+    }
+    for (const gatoString of string){
+        if (gatoString === "🐱"){
+            nuevoString += "🐱"
+        }
+    }return nuevoString
+
+}
+
+
+console.log(separar('🐶🐱🐶🐱🐱🐶🐶')) // '🐶🐶🐶🐶🐱🐱🐱'
