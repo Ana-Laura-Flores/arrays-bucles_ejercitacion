@@ -41,3 +41,40 @@ console.log(contiene(103, [5, 7, 99, 3, 4, 54, 2, 12])) // false
 
 
 
+
+//invertirCaso(string)
+//Crear una función invertirCaso que tome como argumento un string string y devuelva un string donde cada letra tiene el caso invertido, es decir, cada letra está mayúscula si estaba en minúscula, y viceversa.
+
+const invertirCaso =(string)=>{
+    let newString =""
+    for (const letras of string){    
+      if(letras === letras.toUpperCase()){
+          newString += letras.toLowerCase()
+      }else{
+         newString += letras.toUpperCase()
+
+      }
+    }
+    return newString
+}
+console.log(invertirCaso('Ada Lovelace'))
+
+
+/*
+const invertirCaso=(string)=>{
+    if(/[a-z]/.test(string)){
+        return string.toUpperCase()
+    } else{
+     string.toLowerCase()
+    }  
+    
+}
+*/
+
+console.log(invertirCaso('Ada Lovelace'))
+
+
+
+invertirCaso('Ada Lovelace') // 'aDA lOVELACE'
+invertirCaso('feliz cumple') // 'FELIZ CUMPLE'
+invertirCaso('jAvAsCrIpT') // 'JaVaScRiPt'
