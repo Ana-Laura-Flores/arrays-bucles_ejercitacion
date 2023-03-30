@@ -108,16 +108,9 @@ console.log(gano(['⭐️', '⭐️', '⭐️', '💫', '✨'])) // false
 
 const estanJuntos=(personajes)=>{
     for (const personaje of personajes){
-       if(personaje === "Frodo"){
-            personaje.indexOf(-1) ==="Sam"
-
-       }
-
-    }return true
+       
+    }
 }
-
-
-
 /*
 const estanJuntos=(personajes)=>{
     const personaje = "Frodo"
@@ -132,3 +125,5 @@ console.log(estanJuntos(['Sam', 'Frodo', 'Legolas']))
 console.log(estanJuntos(['Peter', 'Frodo', 'Legolas'])) //true
 //estanJuntos(['Aragorn', 'Frodo', 'Frodo']) //true
 //estanJuntos(['Sam', 'Orco', 'Frodo']) //true
+
+
