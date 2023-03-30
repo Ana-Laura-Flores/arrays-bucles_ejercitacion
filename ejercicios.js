@@ -78,3 +78,27 @@ console.log(invertirCaso('Ada Lovelace'))
 invertirCaso('Ada Lovelace') // 'aDA lOVELACE'
 invertirCaso('feliz cumple') // 'FELIZ CUMPLE'
 invertirCaso('jAvAsCrIpT') // 'JaVaScRiPt'
+
+
+//gano(tragamonedas)
+//Crear una función gano que tome como argumento un array tragamonedas con 5 símbolos y devuelva true si son iguales y false sino. Si el array tiene más de 5 símbolos, s´ólo debe comparar los 5 primeros.
+const gano = (tragamonedas)=>{
+    for(let i=0; i<5; i++){
+        console.log(tragamonedas)
+        return tragamonedas[0]===tragamonedas[1] && tragamonedas[1]===tragamonedas[2] && tragamonedas[2]===tragamonedas[3] && tragamonedas[3]===tragamonedas[4]
+    }
+}
+
+/*
+const gano = (arrayTragamonedas) =>{
+   for (const moneda of arrayTragamonedas) {
+       console.log(moneda[i])
+   }
+    
+}
+*/
+
+console.log(gano(['⭐️', '⭐️', '⭐️', '💫', '✨'])) // false
+//gano(['💫', '💫', '💫', '💫', '💫']) // true
+//gano(['💫', '💫', '💫', '💫', '💫', '⭐️']) // true
+
