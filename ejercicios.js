@@ -102,3 +102,33 @@ console.log(gano(['⭐️', '⭐️', '⭐️', '💫', '✨'])) // false
 //gano(['💫', '💫', '💫', '💫', '💫']) // true
 //gano(['💫', '💫', '💫', '💫', '💫', '⭐️']) // true
 
+
+//estanJuntos(personajes)
+//Crear una función estanJuntos que tome como argumento un array de strings personajes, y devuelva true si Sam se encuentra al lado de Frodo, ya sea antes o después, o false sino. Ejemplo:
+
+const estanJuntos=(personajes)=>{
+    for (const personaje of personajes){
+       if(personaje === "Frodo"){
+            personaje.indexOf(-1) ==="Sam"
+
+       }
+
+    }return true
+}
+
+
+
+/*
+const estanJuntos=(personajes)=>{
+    const personaje = "Frodo"
+    for(const personaje in personajes){
+        console.log(personaje)
+        
+    }
+}
+*/
+
+console.log(estanJuntos(['Sam', 'Frodo', 'Legolas']))
+console.log(estanJuntos(['Peter', 'Frodo', 'Legolas'])) //true
+//estanJuntos(['Aragorn', 'Frodo', 'Frodo']) //true
+//estanJuntos(['Sam', 'Orco', 'Frodo']) //true
