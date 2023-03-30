@@ -22,3 +22,4 @@ const sumarNumeros = (numeros) =>{
 
 console.log(sumarNumeros([5, 7, 10, 12,125, 24])) // 58
 
+
