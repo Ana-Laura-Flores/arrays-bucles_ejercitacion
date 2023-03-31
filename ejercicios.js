@@ -166,11 +166,11 @@ console.log(separar('🐶🐱🐶🐱🐱🐶🐶')) // '🐶🐶🐶🐶🐱�
 //         if 
 // }
 
-const obtenerChatStatus=(usuarias)=>{
-    for (let i = 0; i < 1; i++){
-        `${usuarias[i]} está conectada`
-    }
-}
+// const obtenerChatStatus=(usuarias)=>{
+//     for (let i = 0; i < 1; i++){
+//         `${usuarias[i]} está conectada`
+//     }
+// }
 
 // const obtenerChatStatus=(usuarias)=>{
 //  for (let i=0; i<3; i++){
@@ -184,6 +184,44 @@ const obtenerChatStatus=(usuarias)=>{
 //}
 
 
-console.log(obtenerChatStatus(['Ada'])) // 'Ada está conectada'
+//console.log(obtenerChatStatus(['Ada'])) // 'Ada está conectada'
 //console.log(obtenerChatStatus(['Ada', 'Grace'])) // 'Ada y Grace están conectadas'
 //console.log(obtenerChatStatus(['Ada', 'Grace', 'Marie'])) // 'Ada, Grace y 1 persona(s) más están conectadas'
+
+
+
+// EJERCICIO 9
+//comer(plantas)
+//Crear una función comer que tome por parámetro un string plantas que consista en plantas, un conejo y una señal de prohibido. El conejo se come todas las plantas que hay a su derecha, hasta que se encuentra con la señal de prohibido. El programa debe mostrar las plantas sobrevivientes, que son todas las que están a la izquierda del conejo (si hay) y a la derecha de la señal (si hay). Ejemplo:
+
+
+// const comer = (comidas)=>{
+    
+   
+    
+// }
+
+
+
+
+//comer('🐰🥕🥬🥕🚫') // ''
+//console.log(comer('🥕🥬🐰🥕🥕🥕🚫'))  
+//comer('🐰🥕🥬🥕🚫🥕') // '🥕'
+//comer('🌱🥕🌱🐰🌱🥬🌱🌱🚫🌷')  '🌱🥕🌱🌷'
+
+
+//multiplicar(multiplicador, numeros)
+//Crear una función multiplicar que tome como argumentos un número multiplicador y un array de números numeros, y que devuelva un array donde cada elemento es el resultado del elemento del primer array (en la misma posición) multiplicado por el número ingresado. Ejemplo:
+
+
+
+const multiplicar = (multiplicador, numeros)=>{
+   let newArray = []
+   for (const numero of numeros){
+       newArray += numero*multiplicador 
+   }
+   return newArray
+}
+console.log(multiplicar(2, [5, 7, 15, 22, 40])) // [10, 14, 30, 44, 80]
+//multiplicar(10, [2, 5, 77]) // [20, 50, 770]
+
