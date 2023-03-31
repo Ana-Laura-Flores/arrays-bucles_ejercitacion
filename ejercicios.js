@@ -112,17 +112,31 @@ const estanJuntos=(personajes)=>{
     }
 }
 */
-/*
 const estanJuntos=(personajes)=>{
-    const personaje = "Frodo"
-    for(const personaje in personajes){
-        console.log(personaje)
-        
+    for (let i = 0; i<3; i++){
+        console.log(personajes[i])
+        if(personajes[i] ==="Frodo" && personajes[i-1]==="Sam" || personajes[i] ==="Frodo"&& personajes[i+1]==="Sam"){
+            return true
+            
+        }else{
+            false
+        }
     }
 }
-*/
+console.log(estanJuntos(['Sam', 'Frodo', 'Legolas']))
+//console.log(estanJuntos(['Aragorn', 'Frodo', 'Frodo']))
+// const estanJuntos=(personajes)=>{
+//     const personaje = "Frodo"
+//     for(const personaje in personajes){
+//         if (personaje==="Frodo"){
 
-//console.log(estanJuntos(['Sam', 'Frodo', 'Legolas']))
+//         }
+        
+//     }
+// }
+
+
+console.log(estanJuntos(['Sam', 'Frodo', 'Legolas']))
 //console.log(estanJuntos(['Peter', 'Frodo', 'Legolas'])) //true
 //estanJuntos(['Aragorn', 'Frodo', 'Frodo']) //true
 //estanJuntos(['Sam', 'Orco', 'Frodo']) //true
@@ -195,17 +209,17 @@ console.log(separar('🐶🐱🐶🐱🐱🐶🐶')) // '🐶🐶🐶🐶🐱�
 //Crear una función comer que tome por parámetro un string plantas que consista en plantas, un conejo y una señal de prohibido. El conejo se come todas las plantas que hay a su derecha, hasta que se encuentra con la señal de prohibido. El programa debe mostrar las plantas sobrevivientes, que son todas las que están a la izquierda del conejo (si hay) y a la derecha de la señal (si hay). Ejemplo:
 
 
-// const comer = (comidas)=>{
-    
+ const comer = (comidas)=>{
+    !comidas.split("🐰", "🚫")
    
     
-// }
+ }
 
 
 
 
 //comer('🐰🥕🥬🥕🚫') // ''
-//console.log(comer('🥕🥬🐰🥕🥕🥕🚫'))  
+console.log(comer('🥕🥬🐰🥕🥕🥕🚫'))  
 //comer('🐰🥕🥬🥕🚫🥕') // '🥕'
 //comer('🌱🥕🌱🐰🌱🥬🌱🌱🚫🌷')  '🌱🥕🌱🌷'
 
@@ -213,15 +227,50 @@ console.log(separar('🐶🐱🐶🐱🐱🐶🐶')) // '🐶🐶🐶🐶🐱�
 //multiplicar(multiplicador, numeros)
 //Crear una función multiplicar que tome como argumentos un número multiplicador y un array de números numeros, y que devuelva un array donde cada elemento es el resultado del elemento del primer array (en la misma posición) multiplicado por el número ingresado. Ejemplo:
 
-
-
-const multiplicar = (multiplicador, numeros)=>{
-   let newArray = []
-   for (const numero of numeros){
-       newArray += numero*multiplicador 
-   }
-   return newArray
+const multiplicar=(multiplicador, numeros)=>{
+    let newArray = []
+    numeros.forEach(numero =>{
+        newArray = (numero*multiplicador)
+        
+    })
+    return newArray
 }
+
+// const multiplicar = (multiplicador, numeros)=>{
+//    let newArray = []
+//    for (const numero of numeros){
+//        newArray += (numero*multiplicador) 
+//    }
+//    return newArray
+// }
 console.log(multiplicar(2, [5, 7, 15, 22, 40])) // [10, 14, 30, 44, 80]
 //multiplicar(10, [2, 5, 77]) // [20, 50, 770]
 
+//filtrarPorLongitudMayorA(longitud, palabras)
+//Crear una función filtrarPorLongitud que tome como argumentos un número longitud y un array de strings palabras y que devuelva un array con las palabras que tengan una cantidad de letras mayor a longitud. Ejemplo:
+
+
+const filtrarPorLongitudMayorA=(longitud, palabras)=>{
+    
+    let strPalabrasMayor = " "
+    for(const palabra of palabras){
+        let array = palabra.length < longitud
+            if(array=true){
+                strPalabrasMayor += palabra
+            } 
+        
+
+       
+    }return strPalabrasMayor
+
+}
+console.log(filtrarPorLongitudMayorA(4, [
+  'dia',
+  'remolacha',
+  'azul',
+  'sorpresa',
+  'te',
+  'verde',
+])) // ['remolacha', 'sorpresa', 'verde']
+
+Math.max
