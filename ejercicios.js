@@ -278,30 +278,42 @@ console.log(obtenerChatStatus(['Ada'])) // 'Ada está conectada'
 //Crear una función germinar que tome como argumento un string de plantines con flores y plantines (🌱). El array debe comenzar con una flor. La función debe devolver un string con los plantines convertidos en flores. El plantín se debe convertir en la primera flor que encuentre a su izquierda. Ejemplo:
 
 
-const index =(plantines)=>{
+const index =(plantines, i)=>{
 
 }
 
-const germinar=(plantines)=>{
-    let jardin = ""
+// const germinar=(plantines)=>{
+//     let jardin = ""
        
-   for (let i = 0; i < plantines.length ; i++){
-       if( i === "🌱"){
-        jardin += plantines[i-1]
-      } else{
-          jardin += plantines[i]
-      }
+//    for (let i = 0; i < plantines.length ; i++){
+//        if( i === "🌱"){
+//         jardin += plantines
+//       } else{
+//           jardin += plantines
+//       }
 
-      return jardin
-    }
-    // for (const plantin of plantines){
-    //     if (plantin === "🌱"){
-    //         jardin += plantines[i-1]
-    //     }
-    //}
+//       return jardin
+//     }
+//      for (const plantin of plantines){
+//         if (plantin === "🌱"){
+//             jardin += plantin.replace(plantines[i-1])
+//         }
+//     }
+// }
+
+const germinar = (plantines)=>{
+    let jardin = ""
+    for (let i = 0; i<plantines.length; i++){
+        if(plantines[i] === "🌱"){
+            jardin.push(plantines[i-1])
+        
+        }else{
+            jardin += plantines[i]
+        }
+}return jardin
 }
 
-
+//(let i = 0; i<personajes.length; i++)
 console.log(germinar('🌷🌱🌻🌱🌸🌱🌷🌱🌻🌱🌸🌱')) // '🌷🌷🌻🌻🌸🌸🌷🌷🌻🌻🌸🌸'
 ////console.log(germinar('🌷🌱🌱🌱🌻🌱🌱🌸🌱🌱🌱🌱')) // '🌷🌷🌷🌷🌻🌻🌻🌸🌸🌸🌸🌸'
 //console.log(germinar('🌻🌸🌱🌷🌻🌱🌱🌷🌷🌱🌱🌱')) // '🌻🌸🌸🌷🌻🌻🌻🌷🌷🌷🌷🌷'
@@ -311,14 +323,17 @@ console.log(germinar('🌷🌱🌻🌱🌸🌱🌷🌱🌻🌱🌸🌱')) // '�
 // EJERCICIO 9
 //comer(plantas)
 //Crear una función comer que tome por parámetro un string plantas que consista en plantas, un conejo y una señal de prohibido. El conejo se come todas las plantas que hay a su derecha, hasta que se encuentra con la señal de prohibido. El programa debe mostrar las plantas sobrevivientes, que son todas las que están a la izquierda del conejo (si hay) y a la derecha de la señal (si hay). Ejemplo:
-
-
+const seccionComidas = (comidas)=>{
+    return comidas.slice("🐰", "🚫")
+}
+console.log(seccionComidas('🐰🥕🥬🥕🚫🥕'))
  const comer = (comidas)=>{
+     let nuevasComidas = ""
+     
     for (const comida of comidas){
-        !comidas.split("🐰", "🚫")
         comida
    
-    }
+    }return nuevasComidas
  }
 
 
@@ -353,7 +368,7 @@ console.log(multiplicar(2, [5, 7, 15, 22, 40])) // [10, 14, 30, 44, 80]
 //multiplicar(10, [2, 5, 77]) // [20, 50, 770]
 
 
-//11
+//EJERCICIOS 11
 
 //filtrarPorLongitudMayorA(longitud, palabras)
 //Crear una función filtrarPorLongitud que tome como argumentos un número longitud y un array de strings palabras y que devuelva un array con las palabras que tengan una cantidad de letras mayor a longitud. Ejemplo:
@@ -363,8 +378,8 @@ const filtrarPorLongitudMayorA=(longitud, palabras)=>{
     
     let strPalabrasMayor = []
     for(const palabra of palabras){
-        let array = palabra.length < longitud
-            if(array=true){
+        // let array = palabra.length < longitud
+            if(array = palabra.length > longitud){
                 strPalabrasMayor.push(palabra)
             } 
         
@@ -382,4 +397,3 @@ console.log(filtrarPorLongitudMayorA(4, [
   'verde',
 ])) // ['remolacha', 'sorpresa', 'verde']
 
-Math.max
