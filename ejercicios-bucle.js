@@ -66,6 +66,31 @@ console.log(invertir([5, 7, 99, 34, 54, 2, 12])) // [12, 2, 54, 34, 99, 7, 5]
 
 //removerDuplicados(array)
 //Crear una función removerDuplicados que tome como argumento un array array y que devuelva un array con los mismos valores de array pero sin valores duplicados.
+const removerDuplicados=(arrayNumeros)=>{
+    const numerosSinDuplicar = []
+    for (let i = 0; i<arrayNumeros.length; i++){
+        const numero = arrayNumeros[i]
+        //console.log(numerosSinDuplicar)
+        if (!numerosSinDuplicar.includes(numero)){
+            numerosSinDuplicar.push(numero)
+        }
+    }return numerosSinDuplicar
+}
+
+
+/*
+const removerDuplicados=(array)=>{
+    let resultado = []
+    array.forEach(unArray =>{
+       
+        if (!unArray.containe(array)){
+           resultado.push(unArray);
+         }
+     })return
+}
+
+*/
+
 /*
 const removerDuplicados=(array)=>{
     let arraySinDuplicados = []
@@ -78,4 +103,19 @@ const removerDuplicados=(array)=>{
 */
 console.log(removerDuplicados([1, 1, 1])) // [1]
 console.log(removerDuplicados([1, 1, 2, 2, 3, 3])) // [1, 2 ,3]
-//removerDuplicados([5, 23, 8, 5, 5, 44, 23]) // [5, 23 ,8, 44]
+console.log(removerDuplicados([5, 23, 8, 5, 5, 44, 23])) // [5, 23 ,8, 44]
+
+//repetirLetras(palabra, cantidad)
+//Crear una función repetirLetras que tome como argumento un string palabra y un número entero cantidad, y devuelva una string donde cada letra de palabra esté repetida cantidad de veces.
+const repetirLetras=(palabra, cantidad)=>{
+    let nuevoString = ""
+    for (const unaPalabra of palabra){
+        nuevoString +=unaPalabra.repeat(cantidad)
+    }return nuevoString
+}
+
+console.log(repetirLetras('hola', 2)) // 'hhoollaa'
+console.log(repetirLetras('ada', 3)) // 'aaadddaaa'
+console.log(repetirLetras('ah!', 5)) // 'aaaaahhhhh!!!!!'
+console.log(repetirLetras('basta', 1)) // 'basta'
+
