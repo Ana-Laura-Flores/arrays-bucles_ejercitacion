@@ -230,8 +230,9 @@ console.log(separar('🐶🐱🐶🐱🐱🐶🐶')) // '🐶🐶🐶🐶🐱�
 //Ejemplo:
 
 const obtenerChatStatus=(usuarias)=>{
-    let statusChat = ""
+    
     const cantidadUsuarias = usuarias.length
+    
     for(const usuaria of usuarias){
            
         if (cantidadUsuarias === 1){
@@ -278,9 +279,9 @@ console.log(obtenerChatStatus(['Ada'])) // 'Ada está conectada'
 //Crear una función germinar que tome como argumento un string de plantines con flores y plantines (🌱). El array debe comenzar con una flor. La función debe devolver un string con los plantines convertidos en flores. El plantín se debe convertir en la primera flor que encuentre a su izquierda. Ejemplo:
 
 
-const index =(plantines, i)=>{
+//const index =(plantines, i)=>{
 
-}
+//}
 
 // const germinar=(plantines)=>{
 //     let jardin = ""
@@ -302,16 +303,31 @@ const index =(plantines, i)=>{
 // }
 
 const germinar = (plantines)=>{
-    let jardin = ""
+    let jardin = plantines.split(/(?:)/u)
     for (let i = 0; i<plantines.length; i++){
-        if(plantines[i] === "🌱"){
-            jardin.push(plantines[i-1])
-        
-        }else{
-            jardin += plantines[i]
+        if(jardin[i] === "🌱"){
+            jardin[i] = jardin [i-1]
         }
-}return jardin
+}return jardin.join("")
+
 }
+/*
+const germinar = (plantines)=>{
+    let jardin = plantines.split(" ")
+    for (let i = 0; i < jardin.length; i++){
+        if(jardin[i] === "🌱"){
+            for (let j = i-1; j > 0; j--){
+                if (jardin[j] !== "🌱"){
+                    jardin[i] = jardin[j]
+                    console.log(jardin[i])
+                    break
+                }
+            }
+        }
+}return jardin.join("")
+}
+
+*/
 
 //(let i = 0; i<personajes.length; i++)
 console.log(germinar('🌷🌱🌻🌱🌸🌱🌷🌱🌻🌱🌸🌱')) // '🌷🌷🌻🌻🌸🌸🌷🌷🌻🌻🌸🌸'
@@ -323,16 +339,17 @@ console.log(germinar('🌷🌱🌻🌱🌸🌱🌷🌱🌻🌱🌸🌱')) // '�
 // EJERCICIO 9
 //comer(plantas)
 //Crear una función comer que tome por parámetro un string plantas que consista en plantas, un conejo y una señal de prohibido. El conejo se come todas las plantas que hay a su derecha, hasta que se encuentra con la señal de prohibido. El programa debe mostrar las plantas sobrevivientes, que son todas las que están a la izquierda del conejo (si hay) y a la derecha de la señal (si hay). Ejemplo:
-const seccionComidas = (comidas)=>{
-    return comidas.slice("🐰", "🚫")
-}
-console.log(seccionComidas('🐰🥕🥬🥕🚫🥕'))
 
- const comer = (comidas)=>{
+
+// const seccionComidas = (comidas)=>{
+//     let sobrevivientes = !comidas.split( "🐰" , "🚫" )
+//     return sobrevivientes
+// }
+const comer = (comidas)=>{
      let nuevasComidas = ""
      
     for (const comida of comidas){
-        comida
+        nuevasComidas += comidas.slice("🐰" , "🚫" )
    
     }return nuevasComidas
  }
@@ -340,7 +357,11 @@ console.log(seccionComidas('🐰🥕🥬🥕🚫🥕'))
 
 
 
-//comer('🐰🥕🥬🥕🚫') // ''
+ //CZLZS
+
+
+//console.log(comer('CZLZS'))
+console.log(comer('🐰🥕🥬🥕🚫')) // ''
 console.log(comer('🥕🥬🐰🥕🥕🥕🚫'))  
 //comer('🐰🥕🥬🥕🚫🥕') // '🥕'
 //comer('🌱🥕🌱🐰🌱🥬🌱🌱🚫🌷')  '🌱🥕🌱🌷'
@@ -376,16 +397,12 @@ console.log(multiplicar(2, [5, 7, 15, 22, 40])) // [10, 14, 30, 44, 80]
 
 
 const filtrarPorLongitudMayorA=(longitud, palabras)=>{
-    
     let strPalabrasMayor = []
     for(const palabra of palabras){
         // let array = palabra.length < longitud
-            if(array = palabra.length > longitud){
+            if(palabra.length > longitud){
                 strPalabrasMayor.push(palabra)
             } 
-        
-
-       
     }return strPalabrasMayor
 
 }
@@ -413,3 +430,98 @@ const recortar = (cantidadDeLetras, palabras)=>{
 console.log(recortar(4, ['elefante', 'dinosaurio', 'chocolate', 'avion', 'america'])) // ['eleft', 'dino' 'chocolate', 'avio', 'amer']
 console.log(recortar(1, ['algoritmo', 'bug', 'compilador'])) // ['a', 'b', 'c']
 
+
+//EJERCICIO 13
+//sonIguales(a, b)
+//Crear una función sonIguales(a, b) que tome como argumentos dos arrays a y b y devuelva true si ambos arrays tienen los mismos valores en la misma posición, o false sino.
+
+const sonIguales = (a, b)=>{
+    if(a.length !== b.length){
+        return false
+    }
+    for(let i=0; i < a.length; i++){
+        for(let j=0; j < b.length; j++ ){
+            if (a[i] !== b[j]){
+                return false
+            }else{
+                return true
+            }
+            
+        }
+        
+    }
+}
+console.log(sonIguales([10, 25, 6, 33, 48, 105], [10,20, 25, 6, 33, 48, 105]))
+//console.log(sonIguales([10, 25, 6, 33, 48, 105], [10, 25, 6, 33, 48, 105])) // true
+//console.log(sonIguales([10, 25, 6, 33, 48, 105], [10, 25, 6, 33, 48, 105])) // false
+//console.log(sonIguales([10, 25, 6, 33, 48, 105], [10, 25, 6, 33, 48, 105])) // false
+
+/*
+const sonIguales = (a, b)=>{
+    for(let i=0; i < a.length; i++){
+        for(let j=0; j < b.length; i++ ){
+            if(a.length === b.length && a[i]=== b[j]){
+                return true
+            }else{
+                return false
+            }
+        }
+        
+    }
+}
+*/
+console.log(sonIguales([10, 25, 6, 33, 48, 105], [10, 25, 6, 33, 48, 105])) // true
+//console.log(sonIguales([10, 25, 6, 33, 48, 105], [10, 25, 6, 33, 48, 105])) // false
+//console.log(sonIguales([10, 25, 6, 33, 48, 105], [25, 10, 6, 33, 48, 105])) // false
+
+/*
+const sonIguales = (a,b)=>{
+    let i = a.length
+    while (i--) {
+        if (a[i] !== b[i]) return false;
+      }
+      return true;
+
+}
+*/
+
+
+
+//console.log(sonIguales([10, 25, 6, 33, 48, 105], [10, 25, 6, 33, 48, 105])) // true
+//console.log(sonIguales([10, 25, 6, 33, 48, 105], [11, 25, 6, 33, 48, 105])) // false
+//console.log(sonIguales([10, 25, 6, 33, 48, 105], [25, 10, 6, 33, 48, 105])) // false
+
+// EJERCICIO 14
+//obtenerResultado(jugadoraA, jugadoraB, puntajesA, puntajesB)
+//Crear una función obtenerResultado que tome como argumentos dos strings jugadoraA y jugadoraB con los nombres de cada jugadora respectivamente, y dos arrays de numeros puntajesA y puntajesB de la misma longitud. La función debe devolver un string con el nombre de la ganadora o Empate en caso de que no haya ninguna. Para eso, debe comparar las mismas posiciones de cada array de puntajes, y sumar puntos a la jugadora correspondiente dependiendo de quien tenga el puntaje más alto. Por ejemplo:
+
+const obtenerResultado = (jugadoraA, jugadoraB, puntajesA, puntajesB) =>{
+    let ganadora = ""
+    let puntosA = 0
+    let puntosB = 0
+    let largoA = puntajesA.length 
+    let largoB = puntajesB.length
+    if (largoA = largoB){
+        for (let i = 0; i < largoA; i++ ){
+            if (puntajesA[i] = puntajesB[i]){
+                return puntosA += puntosA + 0 ,  puntosB += puntosB + 0
+            }else if (puntajesA[i] > puntajesB[i]){
+                return puntosA += puntosA + 1
+            }else{
+                puntosB += puntosB + 1
+                
+            }
+            if (puntosA > puntosB){
+                return ganadora += jugadoraA
+            }else if (puntosA < puntosB){
+                return ganadora += jugadoraB
+            }else{
+                 return `Empate`
+            }
+        }
+    }
+    
+}
+
+//.log(obtenerResultado(puntosA))
+console.log(obtenerResultado('Ada', 'Grace', [4, 4, 4], [1, 2, 3])) // Ada)

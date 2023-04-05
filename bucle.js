@@ -25,6 +25,7 @@ for (let i = 0; i<10; i++ ){
 
 for (let i = 0; i<3; i++){
     console.log("Hola Ana!!")
+    console.log(i)
 }
 
 const students = ["Luciana", "Natalia", "Sharime", "Rocio", "Gineska"]
